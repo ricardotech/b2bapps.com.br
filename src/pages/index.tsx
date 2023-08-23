@@ -268,7 +268,12 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon mx="auto" as={IoIosStats} color="purple" fontSize="2rem" />
+                <Icon
+                  mx="auto"
+                  as={IoIosStats}
+                  color="purple"
+                  fontSize="2rem"
+                />
               }
               name="Análises de relatórios"
             />
@@ -286,6 +291,7 @@ export default function Index() {
       />
       <JumbotronOne />
       <JumbotronTwo />
+      <Flex h="80px" />
     </Flex>
   );
 }

@@ -5,6 +5,7 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
+  DrawerOverlay,
   Flex,
   Icon,
   Text,
@@ -136,6 +137,7 @@ export default function Header({
           isOpen={isHeaderMenuOpened}
           onClose={() => setIsHeaderMenuOpened(false)}
         >
+          <DrawerOverlay bg="rgba(0, 0, 0, 0.5)" />
           <DrawerContent
             style={{
               backgroundColor: "transparent",

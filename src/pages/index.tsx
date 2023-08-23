@@ -66,7 +66,7 @@ export default function Index() {
                 textAlign={isDesktop ? "left" : "center"}
                 minW="250px"
               >
-                Aplicativos para sua empresa 📱
+                Aplicativos para sua empresa
               </Text>
               <Text
                 color="#000"

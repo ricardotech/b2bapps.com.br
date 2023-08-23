@@ -33,9 +33,8 @@ export default function Header({
   });
 
   return (
-    <Flex w="100%">
+    <Flex w="100%" position="fixed">
       <Flex
-        position="fixed"
         px="20px"
         bg="#FFF"
         h="100px"

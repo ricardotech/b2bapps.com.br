@@ -285,7 +285,7 @@ export default function Index() {
           </SimpleGrid>
         </Flex>
       </Flex>
-      <Flex h="80px" />
+      <Flex h="40px" />
     </Flex>
   );
 }

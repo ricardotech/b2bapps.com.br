@@ -123,7 +123,7 @@ export default function Index() {
     return (
       <Flex
         w="100%"
-        border="1px solid #F9F9F9"
+        border="1px solid #EEE"
         borderRadius={8}
         p="20px"
         py="40px"

@@ -17,7 +17,7 @@ export default function Document() {
       </Head>
       <body
         style={{
-          backgroundColor: "#EEE",
+          backgroundColor: "#FFF",
         }}
       >
         <Main />

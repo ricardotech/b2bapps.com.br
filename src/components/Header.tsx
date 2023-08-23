@@ -23,6 +23,8 @@ export default function Header({
 }) {
   const [isHeaderMenuOpened, setIsHeaderMenuOpened] = useState<boolean>(false);
 
+  const [selectedApp, setSelectedApp] = useState<"Barber">("Barber");
+
   const isDesktop = useBreakpointValue({
     md: true,
     lg: true,
@@ -179,7 +181,7 @@ export default function Header({
                   bg={buttonStyle.bgColor.primary}
                   borderRadius="full"
                   px="20px"
-                  py="5px"
+                  py="10px"
                   w="100%"
                   justify="center"
                   align="center"
@@ -188,7 +190,7 @@ export default function Header({
                     fontSize="1rem"
                     color={textStyle.color.primary}
                     fontFamily="Khand"
-                    fontWeight={400}
+                    fontWeight={500}
                   >
                     LIGAMOS PRA VOCÊ
                   </Text>
@@ -202,7 +204,7 @@ export default function Header({
                   bg={buttonStyle.bgColor.quinary}
                   borderRadius="full"
                   px="20px"
-                  py="5px"
+                  py="10px"
                   w="100%"
                   justify="center"
                   align="center"
@@ -211,7 +213,7 @@ export default function Header({
                     fontSize="1rem"
                     color={textStyle.color.secondary}
                     fontFamily="Khand"
-                    fontWeight={400}
+                    fontWeight={500}
                   >
                     SOU CLIENTE
                   </Text>

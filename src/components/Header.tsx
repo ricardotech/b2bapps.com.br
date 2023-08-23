@@ -111,6 +111,7 @@ export default function Header({
         {!isDesktop && (
           <Flex align="center">
             <Flex
+              zIndex={9999999999}
               onClick={() => {
                 setIsHeaderMenuOpened(!isHeaderMenuOpened);
               }}

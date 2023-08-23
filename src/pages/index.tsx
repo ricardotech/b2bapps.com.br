@@ -173,7 +173,7 @@ export default function Index() {
             textAlign="center"
             minW="250px"
           >
-            Funcionalidades de nossos sistemas
+            Funcionalidades de nossos aplicativos
           </Text>
           <SimpleGrid
             mt="20px"

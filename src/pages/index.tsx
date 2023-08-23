@@ -109,44 +109,49 @@ export default function Index() {
     );
   }
 
-  function JumbotronTwo() {
-    function Item({
-      icon,
-      name,
-      bgColor,
-      color,
-    }: {
-      icon: React.ReactNode;
-      name: string;
-      bgColor: string;
-      color: string;
-    }) {
-      return (
-        <Flex
-          w="100%"
-          border="1px solid #EEE"
-          borderRadius={8}
-          p="20px"
-          py="40px"
-          flexDir="column"
-        >
-          {icon && icon}
-          <Text
-            mt="20px"
-            color="#1F1F1F"
-            fontFamily="Khand"
-            fontSize={isDesktop ? "1.6rem" : "1.3rem"}
-            w="100%"
-            fontWeight={400}
-            textAlign="center"
-          >
-            {name}
-          </Text>
-        </Flex>
-      );
-    }
-
+  function Item({
+    icon,
+    name,
+    bgColor,
+    color,
+  }: {
+    icon: React.ReactNode;
+    name: string;
+    bgColor: string;
+    color: string;
+  }) {
     return (
+      <Flex
+        w="100%"
+        border="1px solid #EEE"
+        borderRadius={8}
+        p="20px"
+        py="40px"
+        flexDir="column"
+      >
+        {icon && icon}
+        <Text
+          mt="20px"
+          color="#1F1F1F"
+          fontFamily="Khand"
+          fontSize={isDesktop ? "1.6rem" : "1.3rem"}
+          w="100%"
+          fontWeight={400}
+          textAlign="center"
+        >
+          {name}
+        </Text>
+      </Flex>
+    );
+  }
+
+  return (
+    <Flex flexDir="column" minH="100vh" h="100%">
+      <Header
+        isSelectAppLoginOpened={selectAppOpened}
+        setIsSelectAppLoginOpened={setSelectAppOpened}
+      />
+      <JumbotronOne />
       <Flex flexDir="column" mt={isDesktop ? "80px" : "100px"}>
         <Flex
           flexDir="column"
@@ -280,18 +285,7 @@ export default function Index() {
           </SimpleGrid>
         </Flex>
       </Flex>
-    );
-  }
-
-  return (
-    <Flex flexDir="column" minH="100vh" h="100%">
-      <Header
-        isSelectAppLoginOpened={selectAppOpened}
-        setIsSelectAppLoginOpened={setSelectAppOpened}
-      />
-      <JumbotronOne />
-      <JumbotronTwo />
-      <Flex h="80px" />
+      <Flex h="180px" />
     </Flex>
   );
 }

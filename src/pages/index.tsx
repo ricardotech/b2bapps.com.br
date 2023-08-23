@@ -157,7 +157,6 @@ export default function Index() {
         <Flex
           flexDir="column"
           px="20px"
-          h="100px"
           w="100%"
           align="center"
           justify="space-between"
@@ -286,7 +285,7 @@ export default function Index() {
           </SimpleGrid>
         </Flex>
       </Flex>
-      <Flex h="180px" />
+      <Flex h="80px" />
     </Flex>
   );
 }

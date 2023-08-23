@@ -123,7 +123,7 @@ export default function Index() {
     return (
       <Flex
         w="100%"
-        border="1px solid #EEE"
+        border="1px solid #F9F9F9"
         borderRadius={8}
         p="20px"
         py="40px"
@@ -179,19 +179,27 @@ export default function Index() {
             pb="40px"
             columnGap="20px"
             rowGap="20px"
-            columns={[2, 2, 4]}
+            columns={[1, 2, 3]}
             w="100%"
           >
             <Item
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon
+                <Flex
+                  bg="rgba(255, 155, 0, 0.2)"
+                  borderRadius={8}
+                  p="10px"
                   mx="auto"
-                  as={IoIosPeople}
-                  color="purple"
-                  fontSize="2rem"
-                />
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosPeople}
+                    color="rgba(255, 155, 0, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Controle de clientes"
             />
@@ -199,12 +207,20 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon
+                <Flex
+                  bg="rgba(55, 155, 0, 0.2)"
+                  borderRadius={8}
+                  p="10px"
                   mx="auto"
-                  as={IoIosPricetags}
-                  color="purple"
-                  fontSize="2rem"
-                />
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosPricetags}
+                    color="rgba(55, 155, 0, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Controle de produtos"
             />
@@ -212,12 +228,20 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon
+                <Flex
+                  bg="rgba(155, 75, 20, 0.2)"
+                  borderRadius={8}
+                  p="10px"
                   mx="auto"
-                  as={IoIosSettings}
-                  color="purple"
-                  fontSize="2rem"
-                />
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosSettings}
+                    color="rgba(155, 75, 20, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Controle de funcionários"
             />
@@ -225,7 +249,20 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon mx="auto" as={IoIosApps} color="purple" fontSize="2rem" />
+                <Flex
+                  bg="rgba(85, 75, 150, 0.2)"
+                  borderRadius={8}
+                  p="10px"
+                  mx="auto"
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosApps}
+                    color="rgba(85, 75, 150, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Digitalização de processos"
             />
@@ -233,12 +270,20 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon
+                <Flex
+                  bg="rgba(5, 175, 150, 0.2)"
+                  borderRadius={8}
+                  p="10px"
                   mx="auto"
-                  as={IoIosAppstore}
-                  color="purple"
-                  fontSize="2rem"
-                />
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosAppstore}
+                    color="rgba(5, 175, 150, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Aplicativos iOS e Android"
             />
@@ -247,12 +292,20 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon
+                <Flex
+                  bg="rgba(5, 25, 150, 0.2)"
+                  borderRadius={8}
+                  p="10px"
                   mx="auto"
-                  as={IoIosDesktop}
-                  color="purple"
-                  fontSize="2rem"
-                />
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosDesktop}
+                    color="rgba(5, 25, 150, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Aplicativos e Páginas Web"
             />
@@ -260,12 +313,20 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon
+                <Flex
+                  bg="rgba(55, 125, 250, 0.2)"
+                  borderRadius={8}
+                  p="10px"
                   mx="auto"
-                  as={IoIosDocument}
-                  color="purple"
-                  fontSize="2rem"
-                />
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosDocument}
+                    color="rgba(55, 125, 250, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Bancos de dados escaláveis"
             />
@@ -273,12 +334,20 @@ export default function Index() {
               bgColor="transparent"
               color="purple"
               icon={
-                <Icon
+                <Flex
+                  bg="rgba(100, 200, 250, 0.2)"
+                  borderRadius={8}
+                  p="10px"
                   mx="auto"
-                  as={IoIosStats}
-                  color="purple"
-                  fontSize="2rem"
-                />
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosStats}
+                    color="rgba(100, 200, 250, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
               }
               name="Análises de relatórios"
             />

@@ -12,6 +12,7 @@ import {
   IoIosApps,
   IoIosAppstore,
   IoIosArrowDroprightCircle,
+  IoIosAt,
   IoIosCard,
   IoIosDesktop,
   IoIosDocument,
@@ -350,6 +351,27 @@ export default function Index() {
                 </Flex>
               }
               name="Análises de relatórios"
+            />
+            <Item
+              bgColor="transparent"
+              color="purple"
+              icon={
+                <Flex
+                  bg="rgba(70, 170, 7, 0.2)"
+                  borderRadius={8}
+                  p="10px"
+                  mx="auto"
+                  my="auto"
+                >
+                  <Icon
+                    mx="auto"
+                    as={IoIosAt}
+                    color="rgba(70, 170, 7, 1)"
+                    fontSize="2rem"
+                  />
+                </Flex>
+              }
+              name="Soluções personalizadas"
             />
           </SimpleGrid>
         </Flex>

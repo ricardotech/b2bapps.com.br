@@ -151,6 +151,7 @@ export default function Index() {
         isSelectAppLoginOpened={selectAppOpened}
         setIsSelectAppLoginOpened={setSelectAppOpened}
       />
+      <Flex h="100px" />
       <JumbotronOne />
       <Flex flexDir="column" mt={isDesktop ? "80px" : "100px"}>
         <Flex

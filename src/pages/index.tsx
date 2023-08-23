@@ -254,7 +254,7 @@ export default function Index() {
                   fontSize="2rem"
                 />
               }
-              name="Aplicativos Web"
+              name="Aplicativos e Páginas Web"
             />
             <Item
               bgColor="transparent"

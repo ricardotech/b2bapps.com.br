@@ -8,12 +8,22 @@ import {
   DrawerOverlay,
   Flex,
   Icon,
+  Img,
+  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import { useBreakpointValue } from "@chakra-ui/react";
-import { IoIosClose, IoIosMenu } from "react-icons/io";
+import {
+  IoIosCellular,
+  IoIosClose,
+  IoIosLock,
+  IoIosMegaphone,
+  IoIosMenu,
+  IoIosPeople,
+  IoIosPhonePortrait,
+} from "react-icons/io";
 
 export default function Header({
   isSelectAppLoginOpened,
@@ -44,68 +54,44 @@ export default function Header({
         maxW="1400px"
         mx="auto"
       >
-        <Text
-          color={textStyle.color.secondary}
-          fontFamily="Khand"
-          fontSize="2rem"
-          fontWeight={600}
-        >
-          B2B Apps
-        </Text>
+        <Img src="/b2bapps2.png" w="150px" h="auto" />
         {isDesktop && (
           <Flex align="center">
-            <Flex mr="20px" flexDir="column" align="center">
-              <Text
-                fontSize="1rem"
-                color={textStyle.color.secondary}
-                fontFamily="Khand"
-                fontWeight={900}
-              >
-                (62) 99349-9349
-              </Text>
-              <Text
-                fontSize="0.7rem"
-                color={textStyle.color.tertiary}
-                fontFamily="Khand"
-                fontWeight={300}
-              >
-                CENTRAL DE VENDAS
-              </Text>
-            </Flex>
             <Flex
               cursor="pointer"
               onClick={() => setIsSelectAppLoginOpened(!isSelectAppLoginOpened)}
-              bg={buttonStyle.bgColor.primary}
+              bg={buttonStyle.bgColor.logo}
               borderRadius="full"
               px="20px"
               py="5px"
             >
               <Text
                 fontSize="1rem"
-                color={textStyle.color.primary}
+                color={textStyle.color.white}
                 fontFamily="Khand"
-                fontWeight={400}
+                fontWeight={600}
               >
-                LIGAMOS PRA VOCÊ
+                ENTRAR EM CONTATO
               </Text>
             </Flex>
             <Flex
               ml="10px"
               cursor="pointer"
               onClick={() => setIsSelectAppLoginOpened(!isSelectAppLoginOpened)}
-              bg={buttonStyle.bgColor.quinary}
+              bg={buttonStyle.bgColor.gray}
               borderRadius="full"
               px="20px"
               py="5px"
             >
               <Text
                 fontSize="1rem"
-                color={textStyle.color.secondary}
+                color={textStyle.color.black}
                 fontFamily="Khand"
-                fontWeight={400}
+                fontWeight={600}
               >
-                SOU CLIENTE
+                ÁREA DO CLIENTE
               </Text>
+              <Icon as={IoIosLock} color="#000" mt="2px" ml="5px" />
             </Flex>
           </Flex>
         )}
@@ -152,76 +138,68 @@ export default function Header({
               }}
               p="20px"
             >
-              <Flex flexDir="column" align="center">
-                <Flex flexDir="column" align="center">
+              <SimpleGrid columns={[2, 2, 4]} columnGap="10px" rowGap="10px">
+                <Flex
+                  cursor="pointer"
+                  onClick={() =>
+                    setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
+                  }
+                  bg={buttonStyle.bgColor.logo}
+                  borderRadius="16"
+                  px="20px"
+                  py="10px"
+                  h="70px"
+                  w="100%"
+                  justify="center"
+                  align="center"
+                >
                   <Text
+                    fontSize="1rem"
+                    color={textStyle.color.white}
+                    fontFamily="Khand"
+                    fontWeight={500}
+                  >
+                    ENTRAR EM CONTATO
+                  </Text>
+                  <Icon
+                    ml="5px"
+                    mt="-5px"
+                    as={IoIosPhonePortrait}
+                    color="#FFF"
                     fontSize="1.5rem"
-                    color={textStyle.color.secondary}
-                    fontFamily="Khand"
-                    fontWeight={900}
-                    w="100%"
-                    textAlign="center"
-                  >
-                    (62) 99349-9349
-                  </Text>
-                  <Text
-                    fontSize="0.7rem"
-                    color={textStyle.color.tertiary}
-                    fontFamily="Khand"
-                    fontWeight={300}
-                    textAlign="center"
-                    w="100%"
-                  >
-                    CENTRAL DE VENDAS
-                  </Text>
+                  />
                 </Flex>
                 <Flex
-                  mt="10px"
                   cursor="pointer"
                   onClick={() =>
                     setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
                   }
-                  bg={buttonStyle.bgColor.primary}
-                  borderRadius="full"
+                  bg={buttonStyle.bgColor.logo}
+                  borderRadius="16"
                   px="20px"
                   py="10px"
+                  h="70px"
                   w="100%"
                   justify="center"
                   align="center"
                 >
                   <Text
                     fontSize="1rem"
-                    color={textStyle.color.primary}
+                    color={textStyle.color.white}
                     fontFamily="Khand"
                     fontWeight={500}
                   >
-                    LIGAMOS PRA VOCÊ
+                    QUEM SOMOS NÓS?
                   </Text>
+                  <Icon
+                    ml="5px"
+                    mt="-5px"
+                    as={IoIosPeople}
+                    color="#FFF"
+                    fontSize="1.5rem"
+                  />
                 </Flex>
-                <Flex
-                  mt="10px"
-                  cursor="pointer"
-                  onClick={() =>
-                    setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
-                  }
-                  bg={buttonStyle.bgColor.quinary}
-                  borderRadius="full"
-                  px="20px"
-                  py="10px"
-                  w="100%"
-                  justify="center"
-                  align="center"
-                >
-                  <Text
-                    fontSize="1rem"
-                    color={textStyle.color.secondary}
-                    fontFamily="Khand"
-                    fontWeight={500}
-                  >
-                    SOU CLIENTE
-                  </Text>
-                </Flex>
-              </Flex>
+              </SimpleGrid>
             </DrawerBody>
           </DrawerContent>
         </Drawer>

@@ -11,7 +11,9 @@ import React from "react";
 import {
   IoIosApps,
   IoIosAppstore,
+  IoIosArrowDown,
   IoIosArrowDroprightCircle,
+  IoIosArrowForward,
   IoIosAt,
   IoIosCard,
   IoIosDesktop,
@@ -85,7 +87,7 @@ export default function Index() {
               <Flex align="center" mt="20px">
                 <Flex
                   cursor="pointer"
-                  bg="#1F1F1F"
+                  bg="#000"
                   borderRadius="full"
                   px="20px"
                   py="10px"
@@ -98,8 +100,9 @@ export default function Index() {
                     fontFamily="Khand"
                     fontWeight={400}
                   >
-                    LIGAMOS PRA VOCÊ
+                    Veja nossas soluções
                   </Text>
+                  <Icon as={IoIosArrowDown} color="#FFF" mt="5px" ml="20px" />
                 </Flex>
               </Flex>
             </Flex>
@@ -154,8 +157,11 @@ export default function Index() {
       />
       <Flex h="100px" />
       <JumbotronOne />
-      <Flex flexDir="column" mt={isDesktop ? "80px" : "100px"}>
+      <Flex flexDir="column">
         <Flex
+          mt="80px"
+          borderTop="2px solid #F0F0F0"
+          pt="80px"
           flexDir="column"
           px="20px"
           w="100%"
@@ -176,7 +182,7 @@ export default function Index() {
             Funcionalidades de nossos aplicativos
           </Text>
           <SimpleGrid
-            mt="20px"
+            mt="40px"
             pb="40px"
             columnGap="20px"
             rowGap="20px"

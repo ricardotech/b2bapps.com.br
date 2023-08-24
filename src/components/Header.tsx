@@ -136,7 +136,7 @@ export default function Header({
             >
               <Flex align="center" justify="space-between" pl="10px">
                 <Text
-                  mt="5px"
+                  mt="7.5px"
                   fontSize="2rem"
                   color={textStyle.color.black}
                   fontFamily="Khand"

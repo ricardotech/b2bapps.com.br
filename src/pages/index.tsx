@@ -119,7 +119,7 @@ export default function Index() {
 
   function JumbotronX() {
     return (
-      <Flex flexDir="column" mt={isDesktop ? "140px" : "-40px"}>
+      <Flex flexDir="column" mt={isDesktop ? "140px" : "-120px"}>
         <Flex
           mt="80px"
           pt="80px"
@@ -350,7 +350,7 @@ export default function Index() {
     const [items, setItems] = useState([
       {
         id: 1,
-        title: "Painel de controle",
+        title: "Painel",
         subtitle:
           "Nesse aplicativo você consegue controlar as vendas, os produtos, os clientes e os funcionários da sua empresa",
         cta: "Ver mais",
@@ -360,7 +360,7 @@ export default function Index() {
       },
       {
         id: 2,
-        title: "Aplicativo de vendas (iOS e Android)",
+        title: "iOS e Android",
         subtitle:
           "Nesse aplicativo para dispositivos mobile os seus clientes podem acessar os seus produtos, e comprar online",
         cta: "Ver mais",
@@ -370,7 +370,7 @@ export default function Index() {
       },
       {
         id: 3,
-        title: "Aplicativo de vendas (Web)",
+        title: "Web",
         subtitle:
           "Nesse aplicativo web, nós garantimos que os seus clientes podem acessar os seus produtos, seja de onde for e de qualquer dispositivo",
         cta: "Ver mais",
@@ -383,10 +383,9 @@ export default function Index() {
     const [activeItem, setActiveItem] = useState("2");
 
     return (
-      <Flex flexDir="column" mt={isDesktop ? "0px" : "-40px"}>
+      <Flex flexDir="column" mt={isDesktop ? "0px" : "-80px"}>
         <Flex
           mt="80px"
-          borderTop="2px solid #F0F0F0"
           pt="80px"
           flexDir="column"
           px="20px"
@@ -422,7 +421,7 @@ export default function Index() {
             bg="#F0F0F0"
             p="10px"
             borderRadius={8}
-            w="70%"
+            w={isDesktop ? "70%" : "100%"}
             h="60px"
             mt="20px"
             justify="space-between"

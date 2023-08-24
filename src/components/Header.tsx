@@ -135,13 +135,19 @@ export default function Header({
               py="20px"
             >
               <Flex align="center" justify="space-between" pl="10px">
-                <Img src="/b2bapps2.png" w="150px" h="auto" />
-
+                <Text
+                  mt="5px"
+                  fontSize="2rem"
+                  color={textStyle.color.black}
+                  fontFamily="Khand"
+                  fontWeight={900}
+                >
+                  MENU
+                </Text>
                 <Flex
                   onClick={() => {
                     setIsHeaderMenuOpened(!isHeaderMenuOpened);
                   }}
-                  mt="5px"
                   cursor="pointer"
                   justify="center"
                   align="center"
@@ -154,7 +160,7 @@ export default function Header({
               </Flex>
               <SimpleGrid
                 columns={[2, 2, 4]}
-                mt="40px"
+                mt="25px"
                 columnGap="10px"
                 rowGap="10px"
               >

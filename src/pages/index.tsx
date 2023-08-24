@@ -380,7 +380,7 @@ export default function Index() {
       },
     ]);
 
-    const [activeItem, setActiveItem] = useState("2");
+    const [activeItem, setActiveItem] = useState("1");
 
     return (
       <Flex flexDir="column" mt={isDesktop ? "0px" : "-80px"}>
@@ -417,6 +417,7 @@ export default function Index() {
           >
             É permitir que você tenha controle da sua empresa, de onde estiver
           </Text>
+
           <Flex
             bg="#F0F0F0"
             p="10px"
@@ -457,6 +458,29 @@ export default function Index() {
               );
             })}
           </Flex>
+
+          {isDesktop && (
+            <>
+              {activeItem === "1" && (
+                <Flex flexDir="column" w="100%" justify="center" align="center">
+                  <Img
+                    src="/desktop.jpg"
+                    w={820 / 1.2}
+                    h={700 / 1.2}
+                    objectFit="cover"
+                  />
+                  <Img
+                    mt={-(145 / 1.2)}
+                    position="absolute"
+                    src="/ui1.png"
+                    w={598 / 1.2}
+                    h={330 / 1.2}
+                    objectFit="fill"
+                  />
+                </Flex>
+              )}
+            </>
+          )}
         </Flex>
       </Flex>
     );

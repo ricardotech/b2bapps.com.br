@@ -137,11 +137,20 @@ export default function Header({
               <Flex align="center" justify="space-between" pl="10px">
                 <Img src="/b2bapps2.png" w="150px" h="auto" />
 
-                <DrawerCloseButton
-                  mt="-10px"
-                  position="relative"
+                <Flex
+                  onClick={() => {
+                    setIsHeaderMenuOpened(!isHeaderMenuOpened);
+                  }}
+                  mt="5px"
+                  cursor="pointer"
+                  justify="center"
+                  align="center"
                   boxShadow="rgba(0, 0, 0, 0.3) 0 0 10px"
-                />
+                  borderRadius={8}
+                  p="5px"
+                >
+                  <Icon as={IoIosClose} color="#1F1F1F" fontSize="1.8rem" />
+                </Flex>
               </Flex>
               <SimpleGrid
                 columns={[2, 2, 4]}

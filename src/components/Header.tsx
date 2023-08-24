@@ -109,11 +109,7 @@ export default function Header({
               borderRadius={8}
               p="5px"
             >
-              <Icon
-                as={isHeaderMenuOpened ? IoIosClose : IoIosMenu}
-                color="#1F1F1F"
-                fontSize="1.8rem"
-              />
+              <Icon as={IoIosMenu} color="#1F1F1F" fontSize="1.8rem" />
             </Flex>
           </Flex>
         )}
@@ -136,15 +132,29 @@ export default function Header({
                 borderTopLeftRadius: 25,
                 borderTopRightRadius: 25,
               }}
-              p="20px"
+              py="20px"
             >
-              <SimpleGrid columns={[2, 2, 4]} columnGap="10px" rowGap="10px">
+              <Flex align="center" justify="space-between" pl="10px">
+                <Img src="/b2bapps2.png" w="150px" h="auto" />
+
+                <DrawerCloseButton
+                  mt="-10px"
+                  position="relative"
+                  boxShadow="rgba(0, 0, 0, 0.3) 0 0 10px"
+                />
+              </Flex>
+              <SimpleGrid
+                columns={[2, 2, 4]}
+                mt="40px"
+                columnGap="10px"
+                rowGap="10px"
+              >
                 <Flex
                   cursor="pointer"
                   onClick={() =>
                     setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
                   }
-                  bg={buttonStyle.bgColor.logo}
+                  bg={buttonStyle.bgColor.black}
                   borderRadius="16"
                   px="20px"
                   py="10px"
@@ -157,24 +167,17 @@ export default function Header({
                     fontSize="1rem"
                     color={textStyle.color.white}
                     fontFamily="Khand"
-                    fontWeight={500}
+                    fontWeight={900}
                   >
                     ENTRAR EM CONTATO
                   </Text>
-                  <Icon
-                    ml="5px"
-                    mt="-5px"
-                    as={IoIosPhonePortrait}
-                    color="#FFF"
-                    fontSize="1.5rem"
-                  />
                 </Flex>
                 <Flex
                   cursor="pointer"
                   onClick={() =>
                     setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
                   }
-                  bg={buttonStyle.bgColor.logo}
+                  bg={buttonStyle.bgColor.black}
                   borderRadius="16"
                   px="20px"
                   py="10px"
@@ -187,17 +190,57 @@ export default function Header({
                     fontSize="1rem"
                     color={textStyle.color.white}
                     fontFamily="Khand"
-                    fontWeight={500}
+                    fontWeight={600}
                   >
                     QUEM SOMOS NÓS?
                   </Text>
-                  <Icon
-                    ml="5px"
-                    mt="-5px"
-                    as={IoIosPeople}
-                    color="#FFF"
-                    fontSize="1.5rem"
-                  />
+                </Flex>
+                <Flex
+                  cursor="pointer"
+                  onClick={() =>
+                    setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
+                  }
+                  bg={buttonStyle.bgColor.black}
+                  borderRadius="16"
+                  px="20px"
+                  py="10px"
+                  h="70px"
+                  w="100%"
+                  justify="center"
+                  align="center"
+                >
+                  <Text
+                    fontSize="1rem"
+                    color={textStyle.color.white}
+                    fontFamily="Khand"
+                    fontWeight={600}
+                  >
+                    NOSSAS SOLUÇÕES
+                  </Text>
+                </Flex>
+                <Flex
+                  cursor="pointer"
+                  onClick={() =>
+                    setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
+                  }
+                  bg={buttonStyle.bgColor.gray}
+                  borderRadius="16"
+                  px="20px"
+                  py="10px"
+                  h="70px"
+                  w="100%"
+                  justify="center"
+                  align="center"
+                >
+                  <Text
+                    fontSize="1rem"
+                    color={textStyle.color.black}
+                    fontFamily="Khand"
+                    fontWeight={600}
+                  >
+                    ÁREA DO CLIENTE
+                  </Text>
+                  <Icon as={IoIosLock} color="#000" mt="-4px" ml="5px" />
                 </Flex>
               </SimpleGrid>
             </DrawerBody>

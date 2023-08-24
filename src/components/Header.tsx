@@ -160,7 +160,7 @@ export default function Header({
               </Flex>
               <SimpleGrid
                 columns={[2, 2, 4]}
-                mt="25px"
+                mt="20px"
                 columnGap="10px"
                 rowGap="10px"
               >

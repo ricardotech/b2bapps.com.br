@@ -91,8 +91,9 @@ export default function Index() {
                   borderRadius="full"
                   px="20px"
                   py="10px"
-                  w={isDesktop ? "fit-content" : "100%"}
-                  justify="center"
+                  w="fit-content"
+                  mx={isDesktop ? 0 : "auto"}
+                  justify="space-between"
                 >
                   <Text
                     fontSize="1.2rem"

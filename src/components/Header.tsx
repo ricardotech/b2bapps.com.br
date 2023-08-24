@@ -238,7 +238,7 @@ export default function Header({
                   onClick={() =>
                     setIsSelectAppLoginOpened(!isSelectAppLoginOpened)
                   }
-                  bg={buttonStyle.bgColor.gray}
+                  bg={buttonStyle.bgColor.logo}
                   borderRadius="16"
                   px="20px"
                   py="10px"

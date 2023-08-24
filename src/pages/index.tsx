@@ -40,7 +40,7 @@ export default function Index() {
     xl: true,
   });
 
-  function JumbotronOne() {
+  function JumbotronA() {
     return (
       <Flex w="100%">
         <Flex
@@ -53,7 +53,7 @@ export default function Index() {
           mx="auto"
         >
           <Flex
-            py={isDesktop ? "100px" : 0}
+            py={isDesktop ? "180px" : 0}
             pb={isDesktop ? 0 : "100px"}
             align={isDesktop ? "center" : "flex-start"}
             w="100%"
@@ -117,12 +117,11 @@ export default function Index() {
     );
   }
 
-  function JumbotronTwo() {
+  function JumbotronX() {
     return (
-      <Flex flexDir="column">
+      <Flex flexDir="column" mt={isDesktop ? "140px" : "-40px"}>
         <Flex
           mt="80px"
-          borderTop="2px solid #F0F0F0"
           pt="80px"
           flexDir="column"
           px="20px"
@@ -144,7 +143,7 @@ export default function Index() {
             Funcionalidades de nossos aplicativos
           </Text>
           <SimpleGrid
-            mt="40px"
+            mt="60px"
             pb="40px"
             columnGap="20px"
             rowGap="20px"
@@ -347,6 +346,123 @@ export default function Index() {
     );
   }
 
+  function JumbotronY() {
+    const [items, setItems] = useState([
+      {
+        id: 1,
+        title: "Painel de controle",
+        subtitle:
+          "Nesse aplicativo você consegue controlar as vendas, os produtos, os clientes e os funcionários da sua empresa",
+        cta: "Ver mais",
+        onClick: () => {
+          alert("painel");
+        },
+      },
+      {
+        id: 2,
+        title: "Aplicativo de vendas (iOS e Android)",
+        subtitle:
+          "Nesse aplicativo para dispositivos mobile os seus clientes podem acessar os seus produtos, e comprar online",
+        cta: "Ver mais",
+        onClick: () => {
+          alert("vendas");
+        },
+      },
+      {
+        id: 3,
+        title: "Aplicativo de vendas (Web)",
+        subtitle:
+          "Nesse aplicativo web, nós garantimos que os seus clientes podem acessar os seus produtos, seja de onde for e de qualquer dispositivo",
+        cta: "Ver mais",
+        onClick: () => {
+          alert("vendas");
+        },
+      },
+    ]);
+
+    const [activeItem, setActiveItem] = useState("2");
+
+    return (
+      <Flex flexDir="column" mt={isDesktop ? "0px" : "-40px"}>
+        <Flex
+          mt="80px"
+          borderTop="2px solid #F0F0F0"
+          pt="80px"
+          flexDir="column"
+          px="20px"
+          w="100%"
+          align="center"
+          justify="space-between"
+          maxW="1400px"
+          mx="auto"
+        >
+          <Text
+            color="#1F1F1F"
+            fontFamily="Khand"
+            fontSize={isDesktop ? "3rem" : "2rem"}
+            w="100%"
+            fontWeight={900}
+            textAlign="center"
+            minW="250px"
+          >
+            Nosso objetivo
+          </Text>
+          <Text
+            color="#1F1F1F"
+            fontFamily="Khand"
+            fontSize={isDesktop ? "1.5rem" : "1rem"}
+            w="100%"
+            fontWeight={400}
+            textAlign="center"
+            minW="250px"
+          >
+            É permitir que você tenha controle da sua empresa, de onde estiver
+          </Text>
+          <Flex
+            bg="#F0F0F0"
+            p="10px"
+            borderRadius={8}
+            w="70%"
+            h="60px"
+            mt="20px"
+            justify="space-between"
+            align="center"
+          >
+            {items.map((item, i) => {
+              return (
+                <Flex
+                  onClick={() => setActiveItem(String(item.id))}
+                  cursor="pointer"
+                  bg={String(item.id) === activeItem ? "#FFF" : "transparent"}
+                  w="33.3%"
+                  px="10px"
+                  h="100%"
+                  justify="center"
+                  borderRadius={8}
+                  align="center"
+                >
+                  <Text
+                    borderTopLeftRadius={8}
+                    borderBottomLeftRadius={8}
+                    color="#1F1F1F"
+                    fontFamily="Khand"
+                    fontSize={isDesktop ? "1.3rem" : "0.9rem"}
+                    w="100%"
+                    textAlign="center"
+                    minW="250px"
+                    fontWeight={String(item.id) === activeItem ? 600 : 400}
+                  >
+                    {item.title}
+                  </Text>
+                </Flex>
+              );
+            })}
+          </Flex>
+        </Flex>
+      </Flex>
+    );
+  }
+
   function Jumbotron() {
     const [windowSize, setWindowSize] = useState({
       width: typeof window !== "undefined" ? window.innerWidth : 0,
@@ -440,7 +556,7 @@ export default function Index() {
     }, [touchStartX, touchEndX]);
 
     return (
-      <Flex w="100%" mt={isDesktop ? "150px" : "-20px"}>
+      <Flex w="100%" mt={isDesktop ? "10px" : "20px"}>
         <Flex flexDir="column" maxW="1400px" mx="auto" w="100%" px="20px">
           <Flex
             flexDir="column"
@@ -480,29 +596,27 @@ export default function Index() {
                 h={isDesktop ? "600px" : "300px"}
                 w="100%"
                 flexDir="column"
-                justify="space-between"
-                p="20px"
+                px="20px"
               >
                 <Text fontFamily="Khand" color="#FFF" fontSize="2rem" mt="20px">
                   Text overed
                 </Text>
-                <Flex mt="20px" align="center" w="100%" justify="center">
-                  {slides.map((slide, i) => {
-                    return (
-                      <Flex
-                        key={i}
-                        cursor="pointer"
-                        onClick={() => setActiveSlide(slide.id)}
-                        mr="10px"
-                        bg={activeSlide === slide.id ? "#b0d243" : "#EEE"}
-                        h="10px"
-                        w={activeSlide === slide.id ? "25px" : "10px"}
-                        borderRadius="10px"
-                      />
-                    );
-                  })}
-                </Flex>
               </Flex>
+            </Flex>
+            <Flex mt="20px" w="100%" justify="center" align="center">
+              {slides.map((slide, i) => {
+                return (
+                  <Flex
+                    key={i}
+                    cursor="pointer"
+                    onClick={() => setActiveSlide(slide.id)}
+                    bg={activeSlide === slide.id ? "#b0d243" : "#EEE"}
+                    h="10px"
+                    w={activeSlide === slide.id ? "25px" : "10px"}
+                    borderRadius="10px"
+                  />
+                );
+              })}
             </Flex>
           </Flex>
         </Flex>
@@ -553,9 +667,9 @@ export default function Index() {
         setIsSelectAppLoginOpened={setSelectAppOpened}
       />
       <Flex h="100px" />
-      <JumbotronOne />
-      <Jumbotron />
-      <JumbotronTwo />
+      <JumbotronA />
+      <JumbotronX />
+      <JumbotronY />
       <Flex h="40px" />
     </Flex>
   );

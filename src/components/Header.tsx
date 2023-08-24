@@ -207,7 +207,7 @@ export default function Header({
                     fontFamily="Khand"
                     fontWeight={600}
                   >
-                    QUEM SOMOS NÓS?
+                    SOBRE NÓS
                   </Text>
                 </Flex>
                 <Flex

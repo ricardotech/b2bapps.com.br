@@ -59,7 +59,7 @@ export default function Index() {
             justify="space-between"
           >
             <Flex flexDir="column">
-              {!isDesktop && <Img mt="10px" mb="40px" w="100%" src="/software.png" />}
+              {!isDesktop && <Img mt="45px" mb="40px" w="100%" src="/software.png" />}
               <Text
                 color="#1F1F1F"
                 fontFamily="Khand"

@@ -43,7 +43,7 @@ export default function Header({
   });
 
   return (
-    <Flex w="100%" position="fixed">
+    <Flex w="100%" position="fixed" zIndex={3}>
       <Flex
         px="20px"
         bg="#FFF"

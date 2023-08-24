@@ -7,7 +7,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   IoIosApps,
   IoIosAppstore,
@@ -53,13 +53,16 @@ export default function Index() {
           mx="auto"
         >
           <Flex
-            h={isDesktop ? "calc(100vh - 180px)" : "100%"}
+            py={isDesktop ? "100px" : 0}
+            pb={isDesktop ? 0 : "100px"}
             align={isDesktop ? "center" : "flex-start"}
             w="100%"
             justify="space-between"
           >
             <Flex flexDir="column">
-              {!isDesktop && <Img mt="45px" mb="40px" w="100%" src="/software.png" />}
+              {!isDesktop && (
+                <Img mt="45px" mb="40px" w="100%" src="/software.png" />
+              )}
               <Text
                 color="#1F1F1F"
                 fontFamily="Khand"
@@ -114,50 +117,8 @@ export default function Index() {
     );
   }
 
-  function Item({
-    icon,
-    name,
-    bgColor,
-    color,
-  }: {
-    icon: React.ReactNode;
-    name: string;
-    bgColor: string;
-    color: string;
-  }) {
+  function JumbotronTwo() {
     return (
-      <Flex
-        w="100%"
-        border="1px solid #F0F0F0"
-        borderRadius={8}
-        p="20px"
-        py="40px"
-        flexDir="column"
-      >
-        {icon && icon}
-        <Text
-          mt="20px"
-          color="#1F1F1F"
-          fontFamily="Khand"
-          fontSize={isDesktop ? "1.6rem" : "1.3rem"}
-          w="100%"
-          fontWeight={400}
-          textAlign="center"
-        >
-          {name}
-        </Text>
-      </Flex>
-    );
-  }
-
-  return (
-    <Flex flexDir="column" minH="100vh" h="100%">
-      <Header
-        isSelectAppLoginOpened={selectAppOpened}
-        setIsSelectAppLoginOpened={setSelectAppOpened}
-      />
-      <Flex h="100px" />
-      <JumbotronOne />
       <Flex flexDir="column">
         <Flex
           mt="80px"
@@ -383,6 +344,218 @@ export default function Index() {
           </SimpleGrid>
         </Flex>
       </Flex>
+    );
+  }
+
+  function Jumbotron() {
+    const [windowSize, setWindowSize] = useState({
+      width: typeof window !== "undefined" ? window.innerWidth : 0,
+      height: typeof window !== "undefined" ? window.innerHeight : 0,
+    });
+
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
+
+    const [slides, setSlides] = useState([
+      {
+        id: 1,
+        image:
+          "https://images.pexels.com/photos/5935744/pexels-photo-5935744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: "Pague agora com cartão de crédito",
+        cta: "Ver leilões",
+        description:
+          "A partir do dia 20 de agosto, você poderá pagar seus lances usando cartão de crédito. Pode parcelar em até 18x.",
+        onClick: () => {
+          alert("clicou no jumbo id 1");
+        },
+      },
+      {
+        id: 2,
+        image:
+          "https://images.pexels.com/photos/13643248/pexels-photo-13643248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: "Leilão de carros - Itaú Unibanco",
+        description:
+          "Leilão de carros do Itaú Unibanco. São mais de 50 carros disponíveis para arremate.",
+        cta: "Ver leilão",
+        onClick: () => {
+          alert("clicou no jumbo id 2");
+        },
+      },
+    ]);
+    const [activeSlide, setActiveSlide] = useState(1);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        if (activeSlide === slides.length) {
+          setActiveSlide(1);
+        } else {
+          setActiveSlide(activeSlide + 1);
+        }
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }, [activeSlide]);
+
+    const [touchStartX, setTouchStartX] = useState(0);
+    const [touchEndX, setTouchEndX] = useState(0);
+
+    const screenWidth = windowSize.width;
+    const minSwipeDistance = screenWidth * 0.2; // 20% of the screen width
+
+    const handleSwipe = () => {
+      const deltaX = touchEndX - touchStartX;
+
+      if (deltaX > minSwipeDistance) {
+        // Swipe to the left
+        setActiveSlide((prevSlide) =>
+          prevSlide === 1 ? slides.length : prevSlide - 1
+        );
+      } else if (deltaX < -minSwipeDistance) {
+        // Swipe to the right
+        setActiveSlide((prevSlide) =>
+          prevSlide === slides.length ? 1 : prevSlide + 1
+        );
+      }
+    };
+
+    useEffect(() => {
+      if (touchStartX !== 0 && touchEndX !== 0) {
+        handleSwipe();
+        setTouchStartX(0);
+        setTouchEndX(0);
+      }
+    }, [touchStartX, touchEndX]);
+
+    return (
+      <Flex w="100%" mt={isDesktop ? "150px" : "-20px"}>
+        <Flex flexDir="column" maxW="1400px" mx="auto" w="100%" px="20px">
+          <Flex
+            flexDir="column"
+            align="center"
+            justify="space-between"
+            borderRadius={10}
+            w="100%"
+            minH={!isDesktop ? "auto" : "400px"}
+            onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
+            onTouchEnd={(e) => setTouchEndX(e.changedTouches[0].clientX)}
+          >
+            <Flex flexDir="column" w="100%" justify="center" align="center">
+              <Flex
+                position="absolute"
+                flexDir="column"
+                maxW="1400px"
+                mx="auto"
+                w="100%"
+                justify="center"
+                align="center"
+                px="20px"
+              >
+                <Img
+                  objectFit="cover"
+                  borderRadius={10}
+                  src={
+                    slides.filter((slide) => slide.id !== activeSlide)[0].image
+                  }
+                  h={isDesktop ? "600px" : "300px"}
+                  w="100%"
+                />
+              </Flex>
+              <Flex
+                zIndex={2}
+                borderRadius={10}
+                bg="rgba(0, 0, 0, 0.5)"
+                h={isDesktop ? "600px" : "300px"}
+                w="100%"
+                flexDir="column"
+                justify="space-between"
+                p="20px"
+              >
+                <Text fontFamily="Khand" color="#FFF" fontSize="2rem" mt="20px">
+                  Text overed
+                </Text>
+                <Flex mt="20px" align="center" w="100%" justify="center">
+                  {slides.map((slide, i) => {
+                    return (
+                      <Flex
+                        key={i}
+                        cursor="pointer"
+                        onClick={() => setActiveSlide(slide.id)}
+                        mr="10px"
+                        bg={activeSlide === slide.id ? "#b0d243" : "#EEE"}
+                        h="10px"
+                        w={activeSlide === slide.id ? "25px" : "10px"}
+                        borderRadius="10px"
+                      />
+                    );
+                  })}
+                </Flex>
+              </Flex>
+            </Flex>
+          </Flex>
+        </Flex>
+      </Flex>
+    );
+  }
+
+  function Item({
+    icon,
+    name,
+    bgColor,
+    color,
+  }: {
+    icon: React.ReactNode;
+    name: string;
+    bgColor: string;
+    color: string;
+  }) {
+    return (
+      <Flex
+        w="100%"
+        border="1px solid #F0F0F0"
+        borderRadius={8}
+        p="20px"
+        py="40px"
+        flexDir="column"
+      >
+        {icon && icon}
+        <Text
+          mt="20px"
+          color="#1F1F1F"
+          fontFamily="Khand"
+          fontSize={isDesktop ? "1.6rem" : "1.3rem"}
+          w="100%"
+          fontWeight={400}
+          textAlign="center"
+        >
+          {name}
+        </Text>
+      </Flex>
+    );
+  }
+
+  return (
+    <Flex flexDir="column" minH="100vh" h="100%">
+      <Header
+        isSelectAppLoginOpened={selectAppOpened}
+        setIsSelectAppLoginOpened={setSelectAppOpened}
+      />
+      <Flex h="100px" />
+      <JumbotronOne />
+      <Jumbotron />
+      <JumbotronTwo />
       <Flex h="40px" />
     </Flex>
   );
